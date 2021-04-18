@@ -130,8 +130,8 @@ const questions = [
     }, {
         question: "How many steps did it take for me to walk from the front porch to catch the bus in 7th grade?",
         imageUrl: "https://i.imgur.com/27iwrI0.jpg",
-        answers: [],
-        hints: ["There's no right answer to this question yet, sorry.  You'll have to wait."]
+        answers: ["22"],
+        hints: ["It's an even number", "It's the day of the month of one of the family members' birthday"]
     }, {
         question: "What is the person on the sign above the bike racks first name?",
         imageUrl: "https://i.imgur.com/f6Iydvi.jpg",
@@ -140,47 +140,47 @@ const questions = [
     }, {
         question: "After Fourth Grade Stephanie appeared in a show called \"________ of ___________\"",
         imageUrl: "https://i.imgur.com/rZ0sKi6.jpg",
-        answers: ["string of pearls","string pearls"],
-        hints: ["it was set in flapper days","the first word is \"string\""]
+        answers: ["string of pearls", "string pearls"],
+        hints: ["it was set in flapper days", "the first word is \"string\""]
     }, {
         question: "This hidden display can be found in...",
         imageUrl: "https://i.imgur.com/e6GFCrO.jpg",
         answers: ["Hibbard Hall"],
-        hints: ["It is a place familiar to Dad","It was the location of chess games."]
+        hints: ["It is a place familiar to Dad", "It was the location of chess games."]
     }, {
         question: "The River is both beautiful and ____________",
         imageUrl: "https://i.imgur.com/sEtaF1Q.jpg",
         answers: ["treacherous"],
         hints: ["Starts with the same first letter of one of our names"]
-    },  {
+    }, {
         question: "This lovely dress can be found in what building?",
         imageUrl: "https://i.imgur.com/NegOJQ4.jpg",
         answers: ["Haas Fine Arts"],
         hints: ["three words"]
-    },  {
+    }, {
         question: "This pole was erected in honor of Mr. and Mrs. Plymouth _______",
         imageUrl: "https://i.imgur.com/ntH6eqA.jpg",
         answers: ["Shedd"],
-        hints: ["It's near a place that Joey loves","It's also the name of a famous aquarium"]
-    },  {
+        hints: ["It's near a place that Joey loves", "It's also the name of a famous aquarium"]
+    }, {
         question: "What building is this most close to?",
         imageUrl: "https://i.imgur.com/IaT6XEE.jpg",
         answers: ["Haas Fine Arts"],
-        hints: ["it's not a climbing structure but it looks like it'd be fun to climb on.","the name has three words and thee As"]
-    },  {
+        hints: ["it's not a climbing structure but it looks like it'd be fun to climb on.", "the name has three words and thee As"]
+    }, {
         question: "which of the following is NOT a metal object that this gnome looks down on: paperclip, utensil, coin, ant, feather ",
         imageUrl: "https://i.imgur.com/IG6pToM.jpg",
-        answers: ["paperclip","paper clip"],
+        answers: ["paperclip", "paper clip"],
         hints: ["Joey and Stephanie pass here often."]
-    },  {
+    }, {
         question: "The bums that got separated from this chair can now be found at this street number.",
         imageUrl: "https://i.imgur.com/KEQKQoG.jpg",
         answers: ["355"],
         hints: ["This place has a lot of steps."]
-    },  {
+    }, {
         question: "The dolls in this room were valued at:",
         imageUrl: "https://i.imgur.com/iCcrfwI.jpg",
-        answers: ["$25,000","$25K"],
+        answers: ["$25,000", "$25K"],
         hints: ["Seems like a lot... Not sure if they actually got that much!"]
     }, {
         question: "In the bathroom/dining room/mudroom/bathroom there was a large collection of old...",
@@ -192,14 +192,13 @@ const questions = [
         imageUrl: "https://i.imgur.com/jdGgaOe.png",
         answers: [],
         hints: ["There's no right answer to this question except waiting for new ones, sorry."]
-    },  {
+    } /*  {
         question: "",
         imageUrl: "",
         answers: [""],
         hints: [""]
-    }
+    }*/
 ];
-
 function getElement(id, type) {
     const elem = document.getElementById(id);
     if (!(elem instanceof type)) {
@@ -230,7 +229,7 @@ if (qNum >= questions.length) {
 function displayQuestion(i) {
     var _a;
     if (i >= questions.length) {
-        questionElem.innerText = "CONGRATULATIONS!";
+        questionElem.innerHTML = "<h2>CONGRATULATIONS!</h2>You've won a homemade dinner by Nancy, Demerise, and Joey!";
         answerElem.disabled = true;
         hintsElem.innerHTML = "";
         return;
