@@ -1,0 +1,238 @@
+<html>
+<head>
+  <title>Birthday Quiz</title>
+<style>
+html {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.5em;
+}
+
+#hints {
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+span.locked {
+  font-color: red;
+}
+
+textarea,
+input,
+select {
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+#question img {
+  max-width: 70vw;
+  max-height: 50vh;
+  height: auto;
+  width: auto;
+}
+</style>
+
+
+</head>
+<body>
+<div>
+  <h2>Karen & Tim Hirsch Birthday Challenge</h2>
+  <form id="form" action="javascript:void(0);">
+    <span id="note">Answer the question below:</span><br>
+    <b>Q:</b> <span id="question">Question</span>
+    <span id="hints"></span><br>
+    <b>A:</b> <input id="answer" autocomplete="off"> 
+    <input type="submit" value="submit" ><br>
+  </form>
+</div>
+
+
+<script>
+var _a, _b, _c, _d;
+// Import stylesheets
+import "./style.css";
+const questions = [
+    {
+        question: "What does this creature want you do do?",
+        imageUrl: "https://i.imgur.com/ijurmaa.png",
+        answers: ["TAKE YOUR TRASH WITH YOU"],
+        hints: ["The second line", "It's a five word phrase"]
+    },
+    {
+        question: "Whose tail is this?",
+        imageUrl: "https://i.imgur.com/rgDVR0t.jpg",
+        answers: ["Lincoln", "Lincoln's"],
+        hints: ["Rhymes with Stinkin'"]
+    },
+    {
+        question: "What do (some) maple syrup producers add to the boiling sap so that it doesn\'t boil over?",
+        imageUrl: "https://i.imgur.com/0Ta35Qw.jpg",
+        answers: ["Butter"],
+        hints: ["This stuff also tastes great on toast."]
+    },
+    {
+        question: "Which daughter has green eyes?",
+        imageUrl: "https://i.imgur.com/fCkoeMx.jpg",
+        answers: ["Nancy"],
+        hints: ["Some people call them Hazel"]
+    },
+    {
+        question: "What's the first name of the person who loves this color?",
+        imageUrl: "https://i.imgur.com/m73tMH8.jpg",
+        answers: ["Walter"],
+        hints: ['You can use <a href="https://www.eauclairewi.gov/government/our-divisions/assessing/property-and-assessment-information" target="assessing">Assessing records</a>']
+    },
+    {
+        question: "How many tall light posts are there on the Lake Street bridge?",
+        imageUrl: "https://i.imgur.com/Oe7ETP5.jpeg",
+        answers: ["8", "eight"],
+        hints: ["It is one of the numbers in our Garfield address", "In the Bible, this number is considered to be a symbol of creation and new beginnings"]
+    },
+    {
+        question: "What's the name of this missing cat?",
+        imageUrl: "https://i.imgur.com/JtJ1X7E.jpg",
+        answers: ["Stevie"],
+        hints: ["It starts with the same letter as one of our family members", "It's the same name as someone who was kidnapped."]
+    },
+    {
+        question: "What's the number of the house whose occupants undertake the unusual combination of keeping chickens and supporting the Republican candidate?",
+        imageUrl: "https://i.imgur.com/SvtYv2X.jpg",
+        answers: ["1328"],
+        hints: ["They also have a Little Library"]
+    },
+    {
+        question: "What's the combination to this lock?",
+        //imageUrl: "",
+        answers: ["MATOS"],
+        hints: ["It relates to a vegetable that is actually a fruit."]
+    },
+    {
+        question: "What is the English translation of the french words written below the county seal?",
+        imageUrl: "https://i.imgur.com/p81dXBY.jpg",
+        answers: ["here are clear waters", "here it is! Clear water", "here is clear water"],
+        hints: ["I don't have a hint, but I'm also curious about the meaning of the lamp!"]
+    },
+    {
+        question: "What activity used to occur in this room that has such a beautiful wood floor?",
+        imageUrl: "https://i.imgur.com/JTy6k16.jpg",
+        answers: ["ballet"],
+        hints: ["The performances were more beautiful than a rose!", "You made many trips here between 1975 and 1981(ish)"]
+    }, {
+        question: "This person (apparently) loves Cveykus. But what does he or she hate? ",
+        imageUrl: "https://i.imgur.com/ilBmKs7.jpg",
+        answers: ["cars"],
+        hints: ["but he does love bikes"]
+    },
+    {
+        question: "What type of food did we eat the first time you guys hung out with Joe?",
+        imageUrl: "https://i.imgur.com/K3hAVbl.jpg",
+        answers: ["indian"],
+        hints: ["We walked around Jamaica Plain pond and then went to a restaurant if I remember correctly.", "this type of food is often curries"]
+    }, {
+        question: "How many steps did it take for me to walk from the front porch to catch the bus in 7th grade?",
+        imageUrl: "https://i.imgur.com/27iwrI0.jpg",
+        answers: [],
+        hints: ["There's no right answer to this question yet, sorry.  You'll have to wait."]
+    }, {
+        question: "What is the person on the sign above the bike racks first name?",
+        imageUrl: "https://i.imgur.com/f6Iydvi.jpg",
+        answers: ["Foung"],
+        hints: ["His last name is Hawj"]
+    }, {
+        question: "MORE QUESTIONS TO COME!",
+        imageUrl: "https://i.imgur.com/jdGgaOe.png",
+        answers: [],
+        hints: ["There's no right answer to this question except waiting for new ones, sorry."]
+    }, {
+        question: "",
+        imageUrl: "",
+        answers: [""],
+        hints: [""]
+    }, {
+        question: "",
+        imageUrl: "",
+        answers: [""],
+        hints: [""]
+    }, {
+        question: "",
+        imageUrl: "",
+        answers: [""],
+        hints: [""]
+    }, {
+        question: "",
+        imageUrl: "",
+        answers: [""],
+        hints: [""]
+    }
+];
+function getElement(id, type) {
+    const elem = document.getElementById(id);
+    if (!(elem instanceof type)) {
+        throw new Error('Element "' + id + (elem ? '" is not a ' + type.name : '" not found'));
+    }
+    return elem;
+}
+const questionElem = getElement("question", HTMLSpanElement);
+const hintsElem = getElement("hints", HTMLElement);
+const answerElem = getElement("answer", HTMLInputElement);
+const noteElem = getElement("note", HTMLSpanElement);
+const form = getElement("form", HTMLFormElement);
+form.addEventListener("submit", processForm);
+function log(x) {
+    console.log(x);
+    return x;
+}
+function parseDateISOString(s) {
+    let ds = s.split(/\D/).map(s => parseInt(s));
+    ds[1] = ds[1] - 1; // adjust month
+    return new Date(...ds).getTime();
+}
+let qNum = (_b = +((_a = localStorage.getItem("qNum")) !== null && _a !== void 0 ? _a : "0")) !== null && _b !== void 0 ? _b : 0;
+let tryCount = (_d = +((_c = localStorage.getItem("tryCount")) !== null && _c !== void 0 ? _c : "0")) !== null && _d !== void 0 ? _d : 0;
+if (qNum >= questions.length) {
+    qNum = 0; // start over
+}
+function displayQuestion(i) {
+    var _a;
+    if (i >= questions.length) {
+        questionElem.innerText = "CONGRATULATIONS!";
+        answerElem.disabled = true;
+        hintsElem.innerHTML = "";
+        return;
+    }
+    const hints = "<br>\n" + ((_a = questions[i].hints) !== null && _a !== void 0 ? _a : []).slice(0, Math.floor(tryCount / 5)).map(h => "Hint: " + h + "<br>\n").join("");
+    hintsElem.innerHTML = hints;
+    const imgText = questions[i].imageUrl;
+    questionElem.innerHTML = questions[i].question +
+        (imgText ? "<br><img src=\"" + imgText + "\">" : "");
+}
+displayQuestion(qNum);
+function normalizeAnswer(x) {
+    return x
+        .trim()
+        .toLowerCase()
+        .replaceAll(/[^a-z0-9 ]/g, "").replaceAll(/ +/g, ' ');
+}
+async function processForm() {
+    const answer = normalizeAnswer(answerElem.value);
+    if (!answer)
+        return;
+    const found = questions[qNum].answers.find(a => normalizeAnswer(a) === answer);
+    answerElem.value = "";
+    if (!found) {
+        noteElem.innerText = "No, sorry.  Try again.";
+        tryCount++;
+    }
+    else {
+        noteElem.innerText = "Correct!";
+        tryCount = 0;
+        qNum++;
+    }
+    localStorage.setItem("qNum", String(qNum));
+    localStorage.setItem("tryCount", String(tryCount));
+    displayQuestion(qNum);
+}
+</script>
+</body>
+</html>
