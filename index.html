@@ -70,18 +70,22 @@ const questions = [
         hints: ["This stuff also tastes great on toast."]
     },
     {
+        question: "Which boy is Tracy pregnant with?",
+        imageUrl: "https://i.imgur.com/ufmtlLw.jpg",
+        answers: ["Timothy"],
+        hints: ["Look at the house"]
+    },
+    {
         question: "Which daughter has green eyes?",
         imageUrl: "https://i.imgur.com/fCkoeMx.jpg",
         answers: ["Nancy"],
         hints: ["Some people call them Hazel"]
-    },
-    {
+    }, {
         question: "What's the first name of the person who loves this color?",
         imageUrl: "https://i.imgur.com/BYDwGQH.jpg",
         answers: ["Walter"],
         hints: ['You can use <a href="https://www.eauclairewi.gov/government/our-divisions/assessing/property-and-assessment-information" target="assessing">Assessing records</a>']
-    },
-    {
+    }, {
         question: "How many tall light posts are there on the Lake Street bridge?",
         imageUrl: "https://i.imgur.com/Oe7ETP5.jpeg",
         answers: ["8", "eight"],
@@ -92,6 +96,11 @@ const questions = [
         imageUrl: "https://i.imgur.com/JtJ1X7E.jpg",
         answers: ["Stevie"],
         hints: ["It starts with the same letter as one of our family members", "It's the same name as someone who was kidnapped."]
+    }, {
+        question: "Where was this taken?",
+        imageUrl: "https://i.imgur.com/UNm6D4u.jpg",
+        answers: ["cathedral at gustavus", "gustavus cathedral", "the cathedral at gustavus", "the gustavus cathedral"],
+        hints: ["Look at the windows", "Look at who is tallest", "Try phrasing this as 'the XXXX at YYYY'"]
     },
     {
         question: "What's the number of the house whose occupants undertake the unusual combination of keeping chickens and supporting the Republican candidate?",
@@ -110,6 +119,11 @@ const questions = [
         imageUrl: "https://i.imgur.com/p81dXBY.jpg",
         answers: ["here are clear waters", "here it is! Clear water", "here is clear water"],
         hints: ["I don't have a hint, but I'm also curious about the meaning of the lamp!"]
+    }, {
+        question: "How old is Tracy in this picture?",
+        imageUrl: "https://i.imgur.com/pP5ajMo.jpg",
+        answers: ["50", "fifty"],
+        hints: ["It's her birthday", "She was very, very surprised"]
     },
     {
         question: "What activity used to occur in this room that has such a beautiful wood floor?",
@@ -153,6 +167,11 @@ const questions = [
         answers: ["treacherous"],
         hints: ["Starts with the same first letter of one of our names"]
     }, {
+        question: "Is this the serious picture or the goofy one?",
+        imageUrl: "https://i.imgur.com/nJA54bg.jpg",
+        answers: ["nobody knows", "neither", "half and half"],
+        hints: ["it's not either", "literally a synonym for 'not either'", "just type 'neither' into the box and move on", "I don't think you're doing this right... the answer is NEITHER", "Now you're just being silly."]
+    }, {
         question: "This lovely dress can be found in what building?",
         imageUrl: "https://i.imgur.com/NegOJQ4.jpg",
         answers: ["Haas Fine Arts"],
@@ -162,6 +181,11 @@ const questions = [
         imageUrl: "https://i.imgur.com/ntH6eqA.jpg",
         answers: ["Shedd"],
         hints: ["It's near a place that Joey loves", "It's also the name of a famous aquarium"]
+    }, {
+        question: "What's the occasion?",
+        imageUrl: "https://i.imgur.com/NE5u586.jpg",
+        answers: ["Airshow", "Air Show"],
+        hints: ["Look up", "It's not a bird or Superman", "no, the answer isn't 'a plane', it's a type of show"]
     }, {
         question: "What building is this most close to?",
         imageUrl: "https://i.imgur.com/IaT6XEE.jpg",
@@ -187,17 +211,17 @@ const questions = [
         imageUrl: "https://i.imgur.com/pjIZdWZ.jpg",
         answers: ["cameras"],
         hints: ["nowadays we just use our phones"]
-    } , {
-        question: "Which boy is Tracy pregnant with?",
-        imageUrl: "https://i.imgur.com/ufmtlLw.jpg",
-        answers: ["Timothy"],
-        hints: ["Look at the house"]
-    }  , {
+    }, {
+        question: "Who is under the weeds?",
+        imageUrl: "https://i.imgur.com/qMNeoyq.jpg",
+        answers: ["Henry"],
+        hints: ["It's at the cabin!"]
+    }, {
         question: "Where was this taken?",
-        imageUrl: "https://i.imgur.com/UNm6D4u.jpg",
-        answers: ["cathedral at gustavus","gustavus cathedral","the cathedral at gustavus","the gustavus cathedral"],
-        hints: ["Look at the windows","Look at who is tallest","Try phrasing this as 'the XXXX at YYYY'"]
-    }/* , {
+        imageUrl: "https://i.imgur.com/5mtQLB9.jpg",
+        answers: ["Summerfest", "Summer fest"],
+        hints: ["Giant instruments", "Season"]
+    } /* , {
         question: "",
         imageUrl: "",
         answers: [""],
@@ -228,9 +252,9 @@ function parseDateISOString(s) {
 }
 let qNum = (_b = +((_a = localStorage.getItem("qNum")) !== null && _a !== void 0 ? _a : "0")) !== null && _b !== void 0 ? _b : 0;
 let tryCount = (_d = +((_c = localStorage.getItem("tryCount")) !== null && _c !== void 0 ? _c : "0")) !== null && _d !== void 0 ? _d : 0;
-/*if (qNum >= questions.length) {
+if (location.href.indexOf("reset") >= 0) {
     qNum = 0; // start over
-}*/
+}
 function displayQuestion(i) {
     var _a;
     if (i >= questions.length) {
