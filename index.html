@@ -187,11 +187,6 @@ const questions = [
         imageUrl: "https://i.imgur.com/pjIZdWZ.jpg",
         answers: ["cameras"],
         hints: ["nowadays we just use our phones"]
-    }, {
-        question: "MORE QUESTIONS TO COME!",
-        imageUrl: "https://i.imgur.com/jdGgaOe.png",
-        answers: [],
-        hints: ["There's no right answer to this question except waiting for new ones, sorry."]
     } /*  {
         question: "",
         imageUrl: "",
@@ -223,9 +218,9 @@ function parseDateISOString(s) {
 }
 let qNum = (_b = +((_a = localStorage.getItem("qNum")) !== null && _a !== void 0 ? _a : "0")) !== null && _b !== void 0 ? _b : 0;
 let tryCount = (_d = +((_c = localStorage.getItem("tryCount")) !== null && _c !== void 0 ? _c : "0")) !== null && _d !== void 0 ? _d : 0;
-if (qNum >= questions.length) {
+/*if (qNum >= questions.length) {
     qNum = 0; // start over
-}
+}*/
 function displayQuestion(i) {
     var _a;
     if (i >= questions.length) {
