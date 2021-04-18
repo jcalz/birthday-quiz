@@ -77,7 +77,7 @@ const questions = [
     },
     {
         question: "What's the first name of the person who loves this color?",
-        imageUrl: "https://i.imgur.com/m73tMH8.jpg",
+        imageUrl: "https://i.imgur.com/BYDwGQH.jpg",
         answers: ["Walter"],
         hints: ['You can use <a href="https://www.eauclairewi.gov/government/our-divisions/assessing/property-and-assessment-information" target="assessing">Assessing records</a>']
     },
@@ -101,7 +101,7 @@ const questions = [
     },
     {
         question: "What's the combination to this lock?",
-        //imageUrl: "",
+        imageUrl: "https://i.imgur.com/J6HldYm.jpg",
         answers: ["MATOS"],
         hints: ["It relates to a vegetable that is actually a fruit."]
     },
@@ -138,32 +138,43 @@ const questions = [
         answers: ["Foung"],
         hints: ["His last name is Hawj"]
     }, {
+        question: "After Fourth Grade Stephanie appeared in a show called \"________ of ___________\"",
+        imageUrl: "https://i.imgur.com/rZ0sKi6.jpg",
+        answers: ["string of pearls","string pearls"],
+        hints: ["it was set in flapper days","the first word is \"string\""]
+    }, {
+        question: "This hidden display can be found in...",
+        imageUrl: "https://i.imgur.com/e6GFCrO.jpg",
+        answers: ["Hibbard Hall"],
+        hints: ["It is a place familiar to Dad","It was the location of chess games."]
+    }, {
+        question: "The River is both beautiful and ____________",
+        imageUrl: "https://i.imgur.com/sEtaF1Q.jpg",
+        answers: ["treacherous"],
+        hints: ["Starts with the same first letter of one of our names"]
+    },  {
+        question: "This lovely dress can be found in what building?",
+        imageUrl: "https://i.imgur.com/NegOJQ4.jpg",
+        answers: ["Haas Fine Arts"],
+        hints: ["three words"]
+    },  {
+        question: "This poll was erected in honor of Mr. and Mrs. Plymouth _______",
+        imageUrl: "https://i.imgur.com/ntH6eqA.jpg",
+        answers: [],
+        hints: ["It's near a place that Joey loves","It's also the name of a famous aquarium"]
+    },{
         question: "MORE QUESTIONS TO COME!",
         imageUrl: "https://i.imgur.com/jdGgaOe.png",
         answers: [],
         hints: ["There's no right answer to this question except waiting for new ones, sorry."]
-    }, {
-        question: "",
-        imageUrl: "",
-        answers: [""],
-        hints: [""]
-    }, {
-        question: "",
-        imageUrl: "",
-        answers: [""],
-        hints: [""]
-    }, {
-        question: "",
-        imageUrl: "",
-        answers: [""],
-        hints: [""]
-    }, {
+    },  {
         question: "",
         imageUrl: "",
         answers: [""],
         hints: [""]
     }
 ];
+
 function getElement(id, type) {
     const elem = document.getElementById(id);
     if (!(elem instanceof type)) {
