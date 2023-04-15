@@ -50,13 +50,62 @@ select {
 
 <script>
 var _a, _b, _c, _d;
+// You should be ashamed of yourself for looking here; 
+// it's just for fun, what's the point of ruining it by cheating? 
+// YOU'RE ONLY CHEATING YOURSELF
 const questions = [
     {
         question: "What is two plus two?",
         imageUrl: "https://i.imgur.com/uD7x0n9.jpg",
         answers: ["Four", "4"],
         hints: ["not 3", "not 5"]
-    } /* , {
+    },
+   {
+        question: "Whose paw is this?",
+        imageUrl: "https://i.imgur.com/G0Jn986.jpg",
+        answers: ["Abe", "Abe's"],
+        hints: [""]
+    },
+  
+   {
+        question: "Whose paw is this?",
+        imageUrl: "https://i.imgur.com/9tISisB.jpg",
+        answers: ["August", "August's", "Augie", "Augie's"],
+        hints: [""]
+    },  
+   {
+        question: "Whose paw is this?",
+        imageUrl: "https://i.imgur.com/pPJZCwl.jpg",
+        answers: ["Tember", "Tember's"],
+        hints: [""]
+    },
+  
+   {
+        question: "Whose paw is this?",
+        imageUrl: "https://i.imgur.com/uJnxkRO.jpg",
+        answers: ["Abe", "Abe's"],
+        hints: [""]
+    },  
+   {
+        question: "Whose eye is this?",
+        imageUrl: "https://i.imgur.com/YrZU0Nb.png",
+        answers: ["Abe", "Abe's"],
+        hints: [""]
+    },
+   {
+        question: "Whose paw is this?",
+        imageUrl: "https://i.imgur.com/yoLq4B8.jpg",
+        answers: ["Lincoln", "Lincoln's"],
+        hints: [""]
+    },
+   {
+        question: "What is Tember's name short for?",
+        imageUrl: "https://i.imgur.com/pPJZCwl.jpg",
+        answers: ["September"],
+        hints: ["It was originally a nickname for Joey"]
+    },
+  
+  /* , {
         question: "",
         imageUrl: "",
         answers: [""],
@@ -93,7 +142,7 @@ if (location.href.indexOf("reset") >= 0) {
 function displayQuestion(i) {
     var _a;
     if (i >= questions.length) {
-        questionElem.innerHTML = "<h2>CONGRATULATIONS!</h2>You've won a homemade dinner by Nancy, Demerise, and Joey!";
+        questionElem.innerHTML = "<h2>CONGRATULATIONS!</h2>You've won ERROR: ${PRIZE} NOT FOUND";
         answerElem.disabled = true;
         hintsElem.innerHTML = "";
         return;
