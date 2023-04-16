@@ -53,291 +53,419 @@ var _a, _b, _c, _d;
 // You should be ashamed of yourself for looking here; 
 // it's just for fun, what's the point of ruining it by cheating? 
 // YOU'RE ONLY CHEATING YOURSELF
-const questions = [
-    {
-        question: "What is two plus two?",
-        imageUrl: "https://i.imgur.com/uD7x0n9.jpg",
-        answers: ["Four", "4"],
-        hints: ["not 3", "not 5"]
-    },
-   {
-        question: "Whose paw is this?",
-        imageUrl: "https://i.imgur.com/G0Jn986.jpg",
-        answers: ["Abe", "Abe's"],
-        hints: [""]
-    },
-  
-   {
-        question: "Whose paw is this?",
-        imageUrl: "https://i.imgur.com/9tISisB.jpg",
-        answers: ["August", "August's", "Augie", "Augie's"],
-        hints: [""]
-    },  
-   {
-        question: "Whose paw is this?",
-        imageUrl: "https://i.imgur.com/pPJZCwl.jpg",
-        answers: ["Tember", "Tember's"],
-        hints: [""]
-    },
-  
-   {
-        question: "Whose paw is this?",
-        imageUrl: "https://i.imgur.com/uJnxkRO.jpg",
-        answers: ["Abe", "Abe's"],
-        hints: [""]
-    },  
-   {
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/YrZU0Nb.png",
-        answers: ["Abe", "Abe's"],
-        hints: [""]
-    },
-   {
-        question: "Whose paw is this?",
-        imageUrl: "https://i.imgur.com/yoLq4B8.jpg",
-        answers: ["Lincoln", "Lincoln's"],
-        hints: [""]
-    },
-   {
-        question: "What is Tember's name short for?",
-        imageUrl: "https://i.imgur.com/pPJZCwl.jpg",
-        answers: ["September"],
-        hints: ["It was originally a nickname for Joey"]
-    },
-    {
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/dwXEgg4.png",
-        answers: ["Demi", "Demerise", "Demmy", "Dem"],
-        hints: []
-    },
-    {
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/UU0yick.png",
-        answers: ["Joe"],
-        hints: []
-    },
-    {
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/JdDydoh.png",
-        answers: ["Stephanie", "Steph"],
-        hints: []
-    },
-	{
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/RLxK4cQ.png",
-        answers: ["Joey"],
-        hints: []
-    },
-	{
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/Z5ZumBt.png",
-        answers: ["Nancy"],
-        hints: []
-    },
-	{
-        question: "What does this factory make?",
-        imageUrl: "https://i.imgur.com/9x80NhO.jpg",
-        answers: ["rubber"],
-        hints: []
-    },
-	{
-        question: "What favorite toy is this?",
-        imageUrl: "https://i.imgur.com/k59IXxZ.jpg",
-        answers: ["Gravitrax", "Gravitracks"],
-        hints: []
-    },
-	{
-        question: "What event is this lady trying to get to?",
-        imageUrl: "https://i.imgur.com/BmXYT8L.jpg",
-        answers: ["Train show", "The train show"],
-        hints: []
-    },
-	{
-        question: "What type of figurine is this?",
-        imageUrl: "https://i.imgur.com/4S1qq1J.jpg",
-        answers: ["Pokemon", "Pokémon"],
-        hints: []
-    },
-	{
-        question: "What word do you associate with this person?",
-        imageUrl: "https://i.imgur.com/vAgUcc9.png",
-        answers: ["Realtor", "house", "drummy lodge"],
-        hints: []
-    },	
-	{
-        question: "What natural occurrence does this picture commemorate?",
-        imageUrl: "https://i.imgur.com/7YDLiGX.jpg",
-        answers: ["Rainbow"],
-        hints: []
-    },	
-	{
-        question: "What favorite toy is this?",
-        imageUrl: "https://i.imgur.com/R6IJYdc.jpg",
-        answers: ["Magnatile", "magnetile", "magnatiles", "magnetiles"],
-        hints: []
-    },		
-	{
-        question: "Who is this fish scared of?",
-        imageUrl: "https://i.imgur.com/MaqzKe7.jpg",
-        answers: ["Cat in the hat", "the cat in the hat", "cat in hat"],
-        hints: []
-    },		
-	{
-        question: "What animal appears most often in the Leader Telegram?",
-        imageUrl: "https://i.imgur.com/1LY4gJP.png",
-        answers: ["eagle", "eagles", "an eagle", "old abe"],
-        hints: []
-    },		
-	{
-        question: "What's the most common tree growing in Eau Claire?",
-        imageUrl: "https://i.imgur.com/VNdBGNI.png",
-        answers: ["maple", "maple tree", "the maple tree", "a maple tree", "maple trees"],
-        hints: []
-    },			
-	{
-        question: "Who is this kid?",
-        imageUrl: "https://i.imgur.com/azAM9mQ.png",
-        answers: ["Steve Frederickson", "Steve"],
-        hints: ["He's a jerk"]
-    },			
-	{
-        question: "Who is this kid?",
-        imageUrl: "https://i.imgur.com/5aYwprx.png",
-        answers: ["Melinda Hoepner", "Melinda"],
-        hints: ["You've seen her recently"]
-    },			
-	{
-        question: "Who is this kid?",
-        imageUrl: "https://i.imgur.com/MHqlDn1.png",
-        answers: ["Christian Johnson", "Christian"],
-        hints: ["<img width=\"10%\" src=\"https://i.imgur.com/iRF0T54.jpg\">"]
-    },				
-	{
-        question: "Can the squirrels get to this bird feeder?",
-        imageUrl: "https://i.imgur.com/KSWw1dK.jpg",
-        answers: ["yes", "y"],
-        hints: []
-    },				
-	{
-        question: "Who does this building belong to?",
-        imageUrl: "https://i.imgur.com/RLaLAqa.jpg",
-        answers: ["papa smurf"],
-        hints: ["he's blue"]
-    },				
-	{
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/9NoNQ9s.png",
-        answers: ["abe","abe's"],
-        hints: []
-    },					
-	{
-        question: "Whose eye is this?",
-        imageUrl: "https://i.imgur.com/LBd715f.png",
-        answers: ["tember","tember's"],
-        hints: []
-    },				
-	{
-        question: "What song are these people singing?",
-        imageUrl: "https://i.imgur.com/IaS2Wgz.jpg",
-        answers: ["hakuna matata"],
-        hints: ["it means \"no worries\""]
-    },			
-		{
-        question: "What animal is Joey playing?",
-        imageUrl: "https://i.imgur.com/mskCR6y.jpg",
-        answers: ["coyote", "a coyote"],
-        hints: ["These are not really native to Africa", "not a jackal", "probably actually a golden wolf or something, but we're looking for a North American name"]
-    },	
-	{
-        question: "What number house is this in front of?",
-        imageUrl: "https://i.imgur.com/wcl4SIN.jpg",
-        answers: ["1735"],
-        hints: []
-    },	
-	{
-        question: "What are the last four digits of this plate?",
-        imageUrl: "https://i.imgur.com/lGuItDp.jpg",
-        answers: ["6492"],
-        hints: []
-    },	
-	{
-        question: "This animal lives in front of the house of someone who works in the area of…?",
-        imageUrl: "https://i.imgur.com/1F2liCO.jpg",
-        answers: ["public health", "health"],
-        hints: ["it's in the public sector", "it rhymes with a kind of fighter jet"]
-    },	
-	{
-        question: "Fill in the blank",
-        imageUrl: "https://i.imgur.com/spSobNM.jpg",
-        answers: ["kindness"],
-        hints: []
-    },	
-	{
-        question: "Whose hand is this?",
-        imageUrl: "https://i.imgur.com/lZzor1l.jpg",
-        answers: ["the litterbug", "litterbug"],
-        hints: ["It'll stump you"]
-    },	
-	{
-        question: "What number house is this in front of?",
-        imageUrl: "https://i.imgur.com/XqLVKLM.jpg",
-        answers: ["1711"],
-        hints: []
-    },				
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/OE2Xy8x.jpg",
-        answers: ["X"],
-        hints: []
-    },	
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/30HACnK.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/zyrAbjM.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/x7MRCox.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/HgQWI5d.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/fwaFyzx.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/Od10AGN.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/RlvD7lo.jpg",
-        answers: ["X"],
-        hints: []
-    },		
-	{
-        question: "",
-        imageUrl: "https://i.imgur.com/8Czd3vC.jpg",
-        answers: ["X"],
-        hints: []
-    },		
+const questions = [{
+    question: "What song are these people singing?",
+    imageUrl: "https://i.imgur.com/IaS2Wgz.jpg",
+    answers: [
+        "hakuna matata"
+    ],
+    hints: [
+        "it means \"no worries\""
+    ]
+}, {
+    question: "Whose paw is this?",
+    imageUrl: "https://i.imgur.com/uJnxkRO.jpg",
+    answers: [
+        "Abe",
+        "Abe's"
+    ],
+    hints: [
+        ""
+    ]
+}, {
+    question: "What favorite toy is this?",
+    imageUrl: "https://i.imgur.com/R6IJYdc.jpg",
+    answers: [
+        "Magnatile",
+        "magnetile",
+        "magnatiles",
+        "magnetiles"
+    ],
+    hints: []
+}, {
+    question: "What favorite toy is this?",
+    imageUrl: "https://i.imgur.com/k59IXxZ.jpg",
+    answers: [
+        "Gravitrax",
+        "Gravitracks"
+    ],
+    hints: []
+}, {
+    question: "Who is this fish scared of?",
+    imageUrl: "https://i.imgur.com/MaqzKe7.jpg",
+    answers: [
+        "Cat in the hat",
+        "the cat in the hat",
+        "cat in hat"
+    ],
+    hints: []
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/UU0yick.png",
+    answers: [
+        "Joe"
+    ],
+    hints: []
+}, {
+    question: "Who does this building belong to?",
+    imageUrl: "https://i.imgur.com/RLaLAqa.jpg",
+    answers: [
+        "papa smurf"
+    ],
+    hints: [
+        "he's blue"
+    ]
+}, {
+    question: "Fill in the blank",
+    imageUrl: "https://i.imgur.com/spSobNM.jpg",
+    answers: [
+        "kindness"
+    ],
+    hints: []
+}, {
+    question: "Whose eggs are pasture-grown and delivered to your door?",
+    imageUrl: "https://i.imgur.com/x7MRCox.jpg",
+    answers: [
+        "Amanda's",
+        "Amanda"
+    ],
+    hints: []
+}, {
+    question: "What animal appears most often in the Leader Telegram?",
+    imageUrl: "https://i.imgur.com/1LY4gJP.png",
+    answers: [
+        "eagle",
+        "eagles",
+        "an eagle",
+        "old abe"
+    ],
+    hints: []
+}, {
+    question: "This animal lives in front of the house of someone who works in the area of…?",
+    imageUrl: "https://i.imgur.com/1F2liCO.jpg",
+    answers: [
+        "public health",
+        "health"
+    ],
+    hints: [
+        "it's in the public sector",
+        "it rhymes with a kind of fighter jet"
+    ]
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/9NoNQ9s.png",
+    answers: [
+        "abe",
+        "abe's"
+    ],
+    hints: []
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/dwXEgg4.png",
+    answers: [
+        "Demi",
+        "Demerise",
+        "Demmy",
+        "Dem"
+    ],
+    hints: []
+}, {
+    question: "On what street can you find this otherworldly place?",
+    imageUrl: "https://i.imgur.com/fwaFyzx.jpg",
+    answers: [
+        "Garfield",
+        "Garfield Avenue",
+        "Garfield Ave",
+        "Garfield Av"
+    ],
+    hints: []
+}, {
+    question: "What is Tember's name short for?",
+    imageUrl: "https://i.imgur.com/pPJZCwl.jpg",
+    answers: [
+        "September"
+    ],
+    hints: [
+        "It was originally a nickname for Joey"
+    ]
+}, {
+    question: "Who is this kid?",
+    imageUrl: "https://i.imgur.com/5aYwprx.png",
+    answers: [
+        "Melinda Hoepner",
+        "Melinda"
+    ],
+    hints: [
+        "You've seen her recently"
+    ]
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/LBd715f.png",
+    answers: [
+        "tember",
+        "tember's"
+    ],
+    hints: []
+}, {
+    question: "What number house is this associated with?",
+    imageUrl: "https://i.imgur.com/HgQWI5d.jpg",
+    answers: [
+        "1402"
+    ],
+    hints: [
+        "It's a shy duck"
+    ]
+}, {
+    question: "What number house is this in front of?",
+    imageUrl: "https://i.imgur.com/XqLVKLM.jpg",
+    answers: [
+        "1711"
+    ],
+    hints: [
+        "It's not the only squirrel in the yard",
+        "Stephanie was once hit with a golf club here"
+    ]
+}, {
+    question: "Whose paw is this?",
+    imageUrl: "https://i.imgur.com/9tISisB.jpg",
+    answers: [
+        "August",
+        "August's",
+        "Augie",
+        "Augie's"
+    ],
+    hints: [
+        ""
+    ]
+}, {
+    question: "What number house is this?",
+    imageUrl: "https://i.imgur.com/OE2Xy8x.jpg",
+    answers: [
+        "1426"
+    ],
+    hints: [
+        "It's not visible from the street"
+    ]
+}, {
+    question: "What are the last four digits of this plate?",
+    imageUrl: "https://i.imgur.com/lGuItDp.jpg",
+    answers: [
+        "6492"
+    ],
+    hints: []
+}, {
+    question: "What word do you associate with this person?",
+    imageUrl: "https://i.imgur.com/vAgUcc9.png",
+    answers: [
+        "Realtor",
+        "house",
+        "drummy lodge"
+    ],
+    hints: []
+}, {
+    question: "What's the most common tree growing in Eau Claire?",
+    imageUrl: "https://i.imgur.com/VNdBGNI.png",
+    answers: [
+        "maple",
+        "maple tree",
+        "the maple tree",
+        "a maple tree",
+        "maple trees"
+    ],
+    hints: []
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/Z5ZumBt.png",
+    answers: [
+        "Nancy"
+    ],
+    hints: []
+}, {
+    question: "Who is this kid?",
+    imageUrl: "https://i.imgur.com/MHqlDn1.png",
+    answers: [
+        "Christian Johnson",
+        "Christian"
+    ],
+    hints: [
+        "<img width=\"10%\" src=\"https://i.imgur.com/iRF0T54.jpg\">"
+    ]
+}, {
+    question: "Whose paw is this?",
+    imageUrl: "https://i.imgur.com/G0Jn986.jpg",
+    answers: [
+        "Abe",
+        "Abe's"
+    ],
+    hints: [
+        ""
+    ]
+}, {
+    question: "What number appears on this flag?",
+    imageUrl: "https://i.imgur.com/Y740TNJ.jpg",
+    answers: [
+        "811"
+    ],
+    hints: []
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/YrZU0Nb.png",
+    answers: [
+        "Abe",
+        "Abe's"
+    ],
+    hints: [
+        ""
+    ]
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/JdDydoh.png",
+    answers: [
+        "Stephanie",
+        "Steph"
+    ],
+    hints: []
+}, {
+    question: "What is two plus two?",
+    imageUrl: "https://i.imgur.com/uD7x0n9.jpg",
+    answers: [
+        "Four",
+        "4"
+    ],
+    hints: [
+        "not 3",
+        "not 5"
+    ]
+}, {
+    question: "What event is this lady trying to get to?",
+    imageUrl: "https://i.imgur.com/BmXYT8L.jpg",
+    answers: [
+        "Train show",
+        "The train show"
+    ],
+    hints: []
+}, {
+    question: "What's the first name of the woman who lives by this duck?",
+    imageUrl: "https://i.imgur.com/Od10AGN.jpg",
+    answers: [
+        "MaryJo",
+        "Mary Jo",
+        "Mary-Jo"
+    ],
+    hints: []
+}, {
+    question: "What number house is this in front of?",
+    imageUrl: "https://i.imgur.com/wcl4SIN.jpg",
+    answers: [
+        "1735"
+    ],
+    hints: []
+}, {
+    question: "What animal is Joey playing?",
+    imageUrl: "https://i.imgur.com/mskCR6y.jpg",
+    answers: [
+        "coyote",
+        "a coyote"
+    ],
+    hints: [
+        "These are not really native to Africa",
+        "not a jackal",
+        "probably actually a golden wolf or something, but we're looking for a North American name"
+    ]
+}, {
+    question: "What natural occurrence does this picture commemorate?",
+    imageUrl: "https://i.imgur.com/7YDLiGX.jpg",
+    answers: [
+        "Rainbow"
+    ],
+    hints: []
+}, {
+    question: "Whose eye is this?",
+    imageUrl: "https://i.imgur.com/RLxK4cQ.png",
+    answers: [
+        "Joey"
+    ],
+    hints: []
+}, {
+    question: "Who is this kid?",
+    imageUrl: "https://i.imgur.com/azAM9mQ.png",
+    answers: [
+        "Steve Frederickson",
+        "Steve"
+    ],
+    hints: [
+        "He's a jerk"
+    ]
+}, {
+    question: "Which word has been censored",
+    imageUrl: "https://i.imgur.com/5oj1RqV.png",
+    answers: [
+        "science"
+    ],
+    hints: []
+}, {
+    question: "What type of figurine is this?",
+    imageUrl: "https://i.imgur.com/4S1qq1J.jpg",
+    answers: [
+        "Pokemon",
+        "Pokémon"
+    ],
+    hints: []
+}, {
+    question: "What does this factory make?",
+    imageUrl: "https://i.imgur.com/9x80NhO.jpg",
+    answers: [
+        "rubber"
+    ],
+    hints: []
+}, {
+    question: "Can the squirrels get to this bird feeder?",
+    imageUrl: "https://i.imgur.com/KSWw1dK.jpg",
+    answers: [
+        "yes",
+        "y"
+    ],
+    hints: []
+}, {
+    question: "Whose hand is this?",
+    imageUrl: "https://i.imgur.com/lZzor1l.jpg",
+    answers: [
+        "the litterbug",
+        "litterbug"
+    ],
+    hints: [
+        "It'll stump you"
+    ]
+}, {
+    question: "What street is this on?",
+    imageUrl: "https://i.imgur.com/30HACnK.jpg",
+    answers: [
+        "Drummond",
+        "Drummond St",
+        "Drummond Street"
+    ],
+    hints: []
+}, {
+    question: "Whose paw is this?",
+    imageUrl: "https://i.imgur.com/pPJZCwl.jpg",
+    answers: [
+        "Tember",
+        "Tember's"
+    ],
+    hints: [
+        ""
+    ]
+}, {
+    question: "Whose paw is this?",
+    imageUrl: "https://i.imgur.com/yoLq4B8.jpg",
+    answers: [
+        "Lincoln",
+        "Lincoln's"
+    ],
+    hints: [
+        ""
+    ]
+},		
   /* , {
         question: "",
         imageUrl: "",
@@ -375,7 +503,7 @@ if (location.href.indexOf("reset") >= 0) {
 function displayQuestion(i) {
     var _a;
     if (i >= questions.length) {
-        questionElem.innerHTML = "<h2>CONGRATULATIONS!</h2>Look for your prize at ${PLACE}";
+        questionElem.innerHTML = "<h2>CONGRATULATIONS!</h2>Ask us about the prize";
         answerElem.disabled = true;
         hintsElem.innerHTML = "";
         return;
