@@ -600,7 +600,13 @@ if (location.href.indexOf("reset") >= 0) {
 function displayQuestion(i) {
     var _a;
     if (i >= questions.length) {
-        questionElem.innerHTML = "<h2>CONGRATULATIONS!</h2>Ask us about the prize";
+        questionElem.innerHTML = "<h2 style=\"margin-bottom:0;\">CONGRATULATIONS!</h2>Here's your last clue:<br><br>"+
+		"Up in the rafters,<br>Up near the roofs,<br>But not where the reindeer go,<br>With their pointy hoofs,<br>"+
+		"<br>Between your house and ours,<br>You'll find the next clue<br>"+
+		"I hope it won't take hours,<br>And you'll know what to do.<br><br>"+
+		"<sub><details><summary style=\"cursor:pointer;\">extra hint if needed</summary><p>"+
+		"It's one of the best<br>Great things to see,<br>The best part about it,<br>Is everything is free.<br>"+
+		"</p></details></sub>";
         answerElem.disabled = true;
         hintsElem.innerHTML = "";
         return;
